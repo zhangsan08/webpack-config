@@ -1,0 +1,43 @@
+const path=require("path");
+module.exports={
+    mode:'development',
+    //入口文件配置
+    entry:{
+        
+        main:'./src/main.js',
+        main1:'./src/main1.js'
+    },
+    //出口文件配置
+    output:{
+        //打包的路径
+        path:path.resolve(__dirname,'../dist'),
+        //打包的文件名
+        filename:'[name].js'
+    },module:{
+        //存放模块
+        rules:[
+            //css loader
+            {
+                test:/\.css$/,
+                use:[
+                    {loader:"style-loader"},
+                    {loader:"css-loader"}
+                ]
+            },
+        ]
+    },
+    plugins:[
+        //插件，用于生产模块和各种功能
+    ],
+    devServer:{
+        //配置webpack开发服务
+        //设置基本目录
+        contentBase:path.resolve(__dirname,'../dist'),
+        //服务的ip地址，可以使用ip也可以使用localhost
+        host:'localhost',
+        //服务端压缩是否开启
+        compress:true,
+        //配置服务端口号
+        port:8888
+    }
+}
