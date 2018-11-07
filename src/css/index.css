@@ -2,3 +2,8 @@ body{
     background-color: red;
     color: #fff;
 }
+.img{
+    background-image:url(../images/timg.jpg);
+    height: 797px;
+    width: 1200px;
+}
